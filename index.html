@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Jeugdraad</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </head>
+    <body>
+        <button class="collapsible" id="leeftijden_button">Leeftijden</button>
+        <div class="content" id="leeftijden_content">
+            <canvas id="leeftijden_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+        <div class="content" id="bbdg_content">
+            <canvas id="bbdg_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="omp_button">Ik voel me op mijn plaats als ik zondag in de kerk ben</button>
+        <div class="content" id="omp_content">
+            <canvas id="omp_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="vmg_btton">Ik voel me gezien als ik zondag in de kerk ben</button>
+        <div class="content" id="vmg_content">
+            <canvas id="vmg_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="zdb_btton">Als ik op zondag in de kerk ben, draagt dat bij aan mijn
+            geloof</button>
+        <div class="content" id="zdb_content">
+            <canvas id="zdb_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="kdb_button">De kerk draagt buiten de diensten om, bij aan mijn geloof</button>
+        <div class="content" id="kdb_content">
+            <canvas id="kdb_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+        <div class="content" id="bbdg_content">
+            <canvas id="bbdg_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+        <div class="content" id="bbdg_content">
+            <canvas id="bbdg_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+        <div class="content" id="bbdg_content">
+            <canvas id="bbdg_chart"></canvas>
+        </div>
+
+        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+        <div class="content" id="bbdg_content">
+            <canvas id="bbdg_chart"></canvas>
+        </div>
+
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+                });
+            }
+                
+        </script>
+
+        <script src="js/configs.js"></script>
+        <script src="js/app.js"></script>  
+    </body>
+</html>
