@@ -1,5 +1,11 @@
 'use strict';
 
+//todo: fontsize
+//todo: css
+//todo: inhoud website
+//todo: last elements and titles
+
+
 //global vars
 var isDrawn = {
     leeftijden: false,
@@ -19,6 +25,7 @@ var buttons = []
 //register buttons and eventlisteners
 var buttonSection = document.getElementById("buttonlist")
 makeElements()
+addCollapsible()
 drawCharts()
 
 function drawChart(chartElement, config, chartName){
@@ -170,6 +177,24 @@ function makeElements() {
         buttons[button_register_number] = newButton
         button_register_number++
     }
+}
+
+function addCollapsible() {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+        });
+    }
+                
 }
 
 
