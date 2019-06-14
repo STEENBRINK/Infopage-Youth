@@ -1,64 +1,242 @@
-<!DOCTYPE html>
+<html lang="en-us"><head>
+
+        <!-- Meta -->
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Jeugdraad</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Jeugd Rapport Rehoboth</title>
+
+        <!-- The compiled CSS file -->
+        <link rel="stylesheet" href="styletemp.css">
         <link rel="stylesheet" href="style.css">
+
+        <!-- favicon.ico. Place these in the root directory. -->
+        <link rel="shortcut icon" href="favicon.ico">
+        
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     </head>
+
     <body>
-        <button class="collapsible" id="leeftijden_button">Leeftijden</button>
-        <div class="content" id="leeftijden_content">
-            <canvas id="leeftijden_chart"></canvas>
-        </div>
 
-        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
-        <div class="content" id="bbdg_content">
-            <canvas id="bbdg_chart"></canvas>
-        </div>
+        <!-- Header -->
+        <header class="pt2 pb1 align--center">
+            <div class="container">
+                <p>Rapport Jeugd-Enquête</p>
+            </div>
+        </header>
 
-        <button class="collapsible" id="omp_button">Ik voel me op mijn plaats als ik zondag in de kerk ben</button>
-        <div class="content" id="omp_content">
-            <canvas id="omp_chart"></canvas>
-        </div>
+        <!-- Body -->
+        <main>
+            
+            <div class="container">
 
-        <button class="collapsible" id="vmg_btton">Ik voel me gezien als ik zondag in de kerk ben</button>
-        <div class="content" id="vmg_content">
-            <canvas id="vmg_chart"></canvas>
-        </div>
+                <!-- Info -->
+                <section class="grid-row grid-row--center">
+                    <!-- Cabin -->
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-1">
+                        <div class="relative">
+                            <canvas class="relative z2" id="leeftijden_special">
+                        </div>
+                    </div>
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-2">
+                        <h3>Blah</h3>
+                        <p>Voor de communicatie is besloten om naar de “Gids” te kijken. Dit is de meest voor de hand liggende communicatiemanier van de gemeente, vooral op gebied van beleid. Er is de jongeren gevraagd of ze de gids lezen en of ze het een nuttig communicatiemiddel vinden. De resultaten van de stellingen zijn als volgt:</p>
+                    </div>
 
-        <button class="collapsible" id="zdb_btton">Als ik op zondag in de kerk ben, draagt dat bij aan mijn
-            geloof</button>
-        <div class="content" id="zdb_content">
-            <canvas id="zdb_chart"></canvas>
-        </div>
+                    <!-- Teepees -->
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-4">
+                        <h3>Dit doen we ook nog</h3>
+                        <p>Voor de communicatie is besloten om naar de “Gids” te kijken. Dit is de meest voor de hand liggende communicatiemanier van de gemeente, vooral op gebied van beleid. Er is de jongeren gevraagd of ze de gids lezen en of ze het een nuttig communicatiemiddel vinden. De resultaten van de stellingen zijn als volgt:</p>
+                    </div>
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-3">
+                        <div class="relative">
+                            <canvas class="relative z2" id="gids_special">
+                        </div>
+                    </div>
 
-        <button class="collapsible" id="kdb_button">De kerk draagt buiten de diensten om, bij aan mijn geloof</button>
-        <div class="content" id="kdb_content">
-            <canvas id="kdb_chart"></canvas>
-        </div>
+                    <!-- Cabin -->
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-1">
+                        <div class="relative">
+                            <canvas class="relative z2" id="jeugddiensten_special">
+                        </div>
+                    </div>
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-2">
+                        <h3>Blah</h3>
+                        <p>Voor de communicatie is besloten om naar de “Gids” te kijken. Dit is de meest voor de hand liggende communicatiemanier van de gemeente, vooral op gebied van beleid. Er is de jongeren gevraagd of ze de gids lezen en of ze het een nuttig communicatiemiddel vinden. De resultaten van de stellingen zijn als volgt:</p>
+                    </div>
 
-        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
-        <div class="content" id="bbdg_content">
-            <canvas id="bbdg_chart"></canvas>
-        </div>
+                    <!-- Teepees -->
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-4">
+                        <h3>Dit doen we ook nog</h3>
+                        <p>Voor de communicatie is besloten om naar de “Gids” te kijken. Dit is de meest voor de hand liggende communicatiemanier van de gemeente, vooral op gebied van beleid. Er is de jongeren gevraagd of ze de gids lezen en of ze het een nuttig communicatiemiddel vinden. De resultaten van de stellingen zijn als volgt:</p>
+                    </div>
+                    <div class="grid-column span-half pt3 pb3 mobile-m order-3">
+                        <div class="relative">
+                            <canvas class="relative z2" id="toekomst_jeugdraad_special">
+                        </div>
+                    </div>
+                </section>
 
-        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
-        <div class="content" id="bbdg_content">
-            <canvas id="bbdg_chart"></canvas>
-        </div>
+            </div>
 
-        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
-        <div class="content" id="bbdg_content">
-            <canvas id="bbdg_chart"></canvas>
-        </div>
+            <section class="container p3">
+                    <h3>Alle statistieken bij elkaar</h3>
+                    <br><i><h4>Leeftijden</h4></i>
+                    <button class="collapsible mb1" id="leeftijden_button">Leeftijden</button>
+                    <div class="content" id="leeftijden_content">
+                        <canvas id="leeftijden_chart"></canvas>
+                    </div>
+                    
+                    <br><i><h4>Betrokkenheid en Geloofsopbouw</h4></i>
+                    <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
+                    <div class="content" id="bbdg_content">
+                        <canvas id="bbdg_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="omp_button">Ik voel me op mijn plaats als ik zondag in de kerk ben</button>
+                    <div class="content" id="omp_content">
+                        <canvas id="omp_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="vmg_button">Ik voel me gezien als ik zondag in de kerk ben</button>
+                    <div class="content" id="vmg_content">
+                        <canvas id="vmg_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="zdb_button">Als ik op zondag in de kerk ben, draagt dat bij aan mijn geloof</button>
+                    <div class="content" id="zdb_content">
+                        <canvas id="zdb_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible mb1" id="kdb_button">De kerk draagt buiten de diensten om, bij aan mijn geloof</button>
+                    <div class="content" id="kdb_content">
+                        <canvas id="kdb_chart"></canvas>
+                    </div>
+                    
+                    <br><i><h4>Communicatie</h4></i>
+                    <button class="collapsible" id="gids_button">Ik lees de 'Gids'</button>
+                    <div class="content" id="gids_content">
+                        <canvas id="gids_chart" class="doughnut"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="ioeg_button">Ik ontvang een eigen 'Gids'</button>
+                    <div class="content" id="ioeg_content">
+                        <canvas id="ioeg_chart" class="doughnut"></canvas>
+                    </div>
+        
+                    <button class="collapsible mb1" id="gin_button">De 'Gids' is nuttig</button>
+                    <div class="content" id="gin_content">
+                        <canvas id="gin_chart" class="doughnut"></canvas>
+                    </div>
+        
+                    <br><i><h4>Regels en Gebruiken</h4></i>
+                    <button class="collapsible" id="kow_button">Onze kerk is ouderwets</button>
+                    <div class="content" id="kow_content">
+                        <canvas id="kow_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="bmrg_button">Ik houd me bezig met de regels en gebruiken in de kerk</button>
+                    <div class="content" id="bmrg_content">
+                        <canvas id="bmrg_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="emrg_button">Ik ben het eens met de regels en gebruiken in de kerk</button>
+                    <div class="content" id="emrg_content">
+                        <canvas id="emrg_chart"></canvas>
+                    </div>
 
-        <button class="collapsible" id="bbdg_button">Ik voel me betrokken bij de gemeente</button>
-        <div class="content" id="bbdg_content">
-            <canvas id="bbdg_chart"></canvas>
-        </div>
+                    <button class="collapsible" id="kaa_button">Ik begrijp waarom we in onze kerk geen kinderen aan het avondmaal hebben</button>
+                    <div class="content" id="kaa_content">
+                        <canvas id="kaa_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="kdd_button">Ik begrijp waarom we in onze kerk aan kinderdoop doen</button>
+                    <div class="content" id="kdd_content">
+                        <canvas id="kdd_chart"></canvas>
+                    </div>
+        
+                    <button class="collapsible" id="gjd_button">Er zijn genoeg jeugddiensten in onze kerk</button>
+                    <div class="content" id="gjd_content">
+                        <canvas id="gjd_chart" class="doughnut"></canvas>
+                    </div>
 
+                    <button class="collapsible mb1" id="wwtk_button">Als ik het niet eens ben met regels en/of gebruiken in onze kerk, weet ik waar ik met mijn mening terecht kan</button>
+                    <div class="content" id="wwtk_content">
+                        <canvas id="wwtk_chart" class="doughnut"></canvas>
+                    </div>
+
+                    <br><i><h4>Kerkenraad</h4></i>
+                    <button class="collapsible" id="wwoi_button">Ik weet wie mijn ouderling is</button>
+                    <div class="content" id="wwoi_content">
+                        <canvas id="wwoi_chart" class="doughnut"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="wwod_button">Ik weet wat een ouderling doet</button>
+                    <div class="content" id="wwod_content">
+                        <canvas id="wwod_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="kbm_button">De kerkenraad betrekt mij bij het maken van beslissingen over het jeugdwerk</button>
+                    <div class="content" id="kbm_content">
+                        <canvas id="kbm_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="kzmb_button">De kerkenraad zou de jeugd meer moeten betrekken bij het maken van beslissingen over het jeugdwerk</button>
+                    <div class="content" id="kzmb_content">
+                        <canvas id="kzmb_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="zmb_button">Ik zou zelf meer betrokken willen zijn bij de beslissingen van de kerkenraad</button>
+                    <div class="content" id="zmb_content">
+                        <canvas id="zmb_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="kmu_button">De kerkenraad zou meer moeten uitleggen over hun beslissingen</button>
+                    <div class="content" id="kmu_content">
+                        <canvas id="kmu_chart" class="doughnut"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="snk_button">De stap om naar de kerkenraad/een ouderling te gaan is voor mij groot</button>
+                    <div class="content" id="snk_content">
+                        <canvas id="snk_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible mb1" id="bpg_button">Ik heb behoefte aan een (pastoraal) gesprek met iemand uit de kerk</button>
+                    <div class="content" id="bpg_content">
+                        <canvas id="bpg_chart"></canvas>
+                    </div>
+
+                    <br><i><h4>JeugdCommissie en Jeugdwerk</h4></i>
+                    <button class="collapsible" id="wwjz_button">Ik weet wie in de huidige jeugdcommissie zitten</button>
+                    <div class="content" id="wwjz_content">
+                        <canvas id="wwjz_chart" class="doughnut"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="wwjd_button">Ik weet wat de huidige jeugdcommissie doet</button>
+                    <div class="content" id="wwjd_content">
+                        <canvas id="wwjd_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible" id="bmj_button">Ik ben blij met hoe het jeugdwerk in de kerk geregeld is (catechisatie, vereniging, jeugddiensten, acties, kamp, etc.)</button>
+                    <div class="content" id="bmj_content">
+                        <canvas id="bmj_chart"></canvas>
+                    </div>
+
+                    <button class="collapsible mb1" id="dioj_button">Ik heb duidelijke ideeën over hoe het jeugdwerk verbeterd kan worden</button>
+                    <div class="content" id="dioj_content">
+                        <canvas id="dioj_chart"></canvas>
+                    </div>
+
+                    <br><i><h4>Jeugdraad</h4></i>
+                    <button class="collapsible" id="tjr_button">Ik zie toekomst in een nieuwe jeugdraad, voor de jeugd, door de jeugd</button>
+                    <div class="content" id="tjr_content">
+                        <canvas id="tjr_chart"></canvas>
+                    </div>
+                </section>
+            
+        </main>
 
         <script>
             var coll = document.getElementsByClassName("collapsible");
@@ -78,7 +256,12 @@
                 
         </script>
 
-        <script src="js/configs.js"></script>
-        <script src="js/app.js"></script>  
+        <script src="js/data.js"></script>
+        <script src="js/options.js"></script>
+        <script src="js/specials.js"></script>
+        <script src="js/app.js"></script>
+    
+
+
     </body>
 </html>
