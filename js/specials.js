@@ -2,7 +2,7 @@
  * Chart on the ages of the participants special 
  */
  
-let leeftijdenClonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+let leeftijdenClonedOptions = JSON.parse(JSON.stringify(options.leeftijden.options))
 leeftijdenClonedOptions.title.text = dataList.leeftijden.title
 
 let leeftijdenSpecialConfig = {

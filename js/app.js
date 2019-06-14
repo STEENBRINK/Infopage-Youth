@@ -4,20 +4,10 @@
 //todo: css
 //todo: inhoud website
 //todo: last elements and titles
-//git
 
 
 //global vars
-var isDrawn = {
-    leeftijden: false,
-    bbdg: false,
-    omp: false,
-    vmg: false,
-    zdb: false,
-    kdb: false,
-    gids: false,
-    ioeg: false
-}
+var isDrawn = {}
 
 var drawn_charts = []
 var button_register_number = 0
@@ -36,11 +26,11 @@ function drawChart(chartElement, config, chartName){
 function deleteChart(chartElement, isBar){
 
     let div = chartElement.parentNode
-    let element
+    let oldElement
 
     for(let i = 0; i < div.childNodes.length; i++){
         if(div.childNodes[i].className == "chartjs-size-monitor"){
-            element = div.childNodes[i]
+            oldElement = div.childNodes[i]
             break;
         }
     }
@@ -52,14 +42,14 @@ function deleteChart(chartElement, isBar){
     }
     
     div.removeChild(chartElement);
-    div.removeChild(element)
+    div.removeChild(oldElement)
     div.appendChild(newElement);
 }
 
-function checkChart(e, chart, config, drawn, isDoughnut){
+function checkChart(e, chart, config, drawn, isBar){
     let chartElement = document.getElementById(chart)
     if(isDrawn[drawn]){
-        deleteChart(chartElement, isDoughnut)
+        deleteChart(chartElement, isBar)
         isDrawn[drawn] = false
     }else{
         chartElement.getContext('2d')
@@ -110,6 +100,7 @@ function drawCharts() {
 
             buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, dataList[element].isBar))
         }else{  
+
             if(!dataList[element].isBar){
                 let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
                 clonedOptions.title.text = dataList[element].title
@@ -132,8 +123,12 @@ function drawCharts() {
                 }
 
             }else{
-
-                let clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+                let clonedOptions
+                if(dataList[element].name == "leeftijden"){
+                    clonedOptions = JSON.parse(JSON.stringify(options.leeftijden.options))
+                }else{
+                    clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+                }
                 clonedOptions.title.text = dataList[element].title
 
                 config = {
@@ -145,7 +140,7 @@ function drawCharts() {
 
             config.options.title.text = dataList[element].title
 
-            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, false))
+            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, dataList[element].isBar))
         }
 
         button_register_number++
@@ -154,10 +149,15 @@ function drawCharts() {
 }
 
 function makeElements() {
+    let newTitle = [3]
     
     for (let element in dataList){
         let newButton= document.createElement('button')
-        newButton.setAttribute("class", "collapsible")
+        if(dataList[element].last){
+            newButton.setAttribute("class", "collapsible last")
+        }else{
+            newButton.setAttribute("class", "collapsible")
+        }
         newButton.setAttribute("id", dataList[element].name + "_button")
         newButton.innerHTML = dataList[element].title
 
@@ -177,6 +177,17 @@ function makeElements() {
 
         buttons[button_register_number] = newButton
         button_register_number++
+
+        if(dataList[element].last){
+            newTitle[0] = document.createElement('br')
+            newTitle[1] = document.createElement('i')
+            newTitle[2] = document.createElement('h4')
+            newTitle[2].innerHTML = dataList[element].subject
+
+            buttonSection.appendChild(newTitle[0])
+            buttonSection.appendChild(newTitle[1])
+            newTitle[1].appendChild(newTitle[2])
+        }
     }
 }
 

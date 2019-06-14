@@ -4,10 +4,12 @@ var dataList = {
         title: "Leeftijden",
         five: false,
         isBar: true,
+        last: true,
+        subject: "Betrokkenheid en geloofsopbouw in de gemeente",
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
-                label: "Personen",
+                label: "Personen per leeftijd",
                 data: [0, 1, 0, 1, 2, 3, 7, 11, 3, 0],
                 backgroundColor: [
                     "rgba(54, 162, 235, 0.5)",
@@ -44,6 +46,7 @@ var dataList = {
         title: "Ik voel me betrokken bij de gemeente",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -84,6 +87,7 @@ var dataList = {
         title: "Ik voel me op mijn plaats als ik zondag in de kerk ben",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -124,6 +128,7 @@ var dataList = {
         title: "Ik voel me gezien als ik zondag in de kerk ben",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -164,6 +169,7 @@ var dataList = {
         title: "Als ik op zondag in de kerk ben, draagt dat bij aan mijn geloof",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -204,6 +210,8 @@ var dataList = {
         title: "De kerk draagt buiten de diensten om bij aan mijn geloof",
         five: false,
         isBar: true,
+        last: true,
+        subject: "Communicatie",
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -243,6 +251,7 @@ var dataList = {
         name: "gids",
         title: "Ik lees de 'Gids'",
         isBar: false,
+        last: false,
         data: {
             labels: ["Nee", "Ja", "Soms", "Alleen Losse stukjes"],
             datasets: [{
@@ -268,6 +277,7 @@ var dataList = {
         name: "ioeg",
         title: "Ik ontvang een eigen 'Gids' (personen)",
         isBar: false,
+        last: false,
         data: {
             labels: ["Nee", "Ja (Op papier)", "Ja (Digitaal)"],
             datasets: [{
@@ -292,9 +302,11 @@ var dataList = {
     gin: {
         name: "gin",
         isBar: false,
+        last: true,
+        subject: "Regels en Gebruiken",
         title: "De 'Gids' is nuttig",
         data: {
-            labels: ["Ja", "Nee", "Niet voor mij", "Geen antwoord"],
+            labels: ["Ja", "Nee", "Niet voor mij", "GA"],
             datasets: [{
                 label: "De 'Gids' is nuttig",
                 backgroundColor: [
@@ -319,6 +331,7 @@ var dataList = {
         title: "Onze kerk is ouderwets",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -359,6 +372,7 @@ var dataList = {
         title: "Ik houd me bezig met de regels en gebruiken in de kerk",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -399,8 +413,9 @@ var dataList = {
         title: "Ik ben het eens met de regels en gebruiken in de kerk",
         five: false,
         isBar: true,
+        last: false,
         data: {
-            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Geen Antwoord"],
+            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "GA"],
             datasets: [{
                 label: "Personen per Score",
                 data: [0, 0, 0, 2, 4, 6, 7, 5, 3, 0, 1],
@@ -415,7 +430,7 @@ var dataList = {
                     "rgba(54, 162, 235, 0.5)",
                     "rgba(54, 162, 235, 0.5)",
                     "rgba(54, 162, 235, 0.5)",
-                    "rgba(54, 162, 235, 0.5)"
+                    "rgba(125, 125, 125, 0.5)"
                 ],
                 borderColor: [
                     "rgba(54, 162, 235, 1)",
@@ -428,7 +443,7 @@ var dataList = {
                     "rgba(54, 162, 235, 1)",
                     "rgba(54, 162, 235, 1)",
                     "rgba(54, 162, 235, 1)",
-                    "rgba(54, 162, 235, 1)"
+                    "rgba(125, 125, 125, 1)"
                 ],
                 borderWidth: 1
             }]
@@ -439,6 +454,7 @@ var dataList = {
         title: "Ik begrijp waarom we in de kerk geen kinderen aan het avondmaal hebben",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -479,8 +495,9 @@ var dataList = {
         title: "Ik begrijp waarom we in onze kerk aan kinderdoop doen",
         five: false,
         isBar: true,
+        last: false,
         data: {
-            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Geen Antwoord"],
+            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "GA"],
             datasets: [{
                 label: "Personen per Score",
                 data: [1, 0, 0, 0, 2, 0, 4, 6, 8, 6, 1],
@@ -495,7 +512,7 @@ var dataList = {
                     "rgba(54, 162, 235, 0.5)",
                     "rgba(54, 162, 235, 0.5)",
                     "rgba(54, 162, 235, 0.5)",
-                    "rgba(54, 162, 235, 0.5)"
+                    "rgba(125, 125, 125, 0.5)"
                 ],
                 borderColor: [
                     "rgba(54, 162, 235, 1)",
@@ -508,7 +525,7 @@ var dataList = {
                     "rgba(54, 162, 235, 1)",
                     "rgba(54, 162, 235, 1)",
                     "rgba(54, 162, 235, 1)",
-                    "rgba(54, 162, 235, 1)"
+                    "rgba(125, 125, 125, 1)"
                 ],
                 borderWidth: 1
             }]
@@ -517,6 +534,7 @@ var dataList = {
     gjd: {
         name: "gjd",
         isBar: false,
+        last: false,
         title: "Er zijn genoeg jeugddiensten in onze kerk",
         data: {
             labels: ["Ja", "Nee", "Maakt me niet uit"],
@@ -542,6 +560,8 @@ var dataList = {
     wwtk: {
         name: "wwtk",
         isBar: false,
+        last: true,
+        subject: "Kerkenraad",
         title: "Als ik het niet eens ben met regels en/of gebruiken in onze kerk, weet ik waar ik met mijn mening terecht kan",
         data: {
             labels: ["Ja", "Ja, maar dat ga ik nooit doen", "Nee, maar dat maakt ook niet uit", "Nee, maar dat zou ik wel willen weten"],
@@ -567,6 +587,7 @@ var dataList = {
     wwoi: {
         name: "wwoi",
         isBar: true,
+        last: false,
         title: "Ik weet wie mijn ouderling is",
         data: {
             labels: ["Ja", "Nee"],
@@ -594,6 +615,7 @@ var dataList = {
         title: "Ik weet wat een ouderling doet",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -634,6 +656,7 @@ var dataList = {
         title: "De kerkenraad betrekt mij bij beslissingen over het jeugdwerk",
         five: true,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
@@ -662,6 +685,7 @@ var dataList = {
         title: "De kerkenraad zou de jeugd meer moeten betrekken bij het maken van beslissingen over het jeugdwerk",
         five: true,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
@@ -690,6 +714,7 @@ var dataList = {
         title: "Ik zou zelf meer betrokken willen zijn bij de beslissingen van de kerkenraad",
         five: true,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
@@ -716,6 +741,7 @@ var dataList = {
     kmu: {
         name: "kmu",
         isBar: false,
+        last: false,
         title: "De kerkenraad zou meer mouten uitleggen over hun beslissingen",
         data: {
             labels: ["Ja", "Nee", "Maakt me niet uit"],
@@ -743,6 +769,7 @@ var dataList = {
         title: "De stap om naar de kerkenraad/een ouderling te gaan is voor mij groot",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -783,6 +810,8 @@ var dataList = {
         title: "Ik heb behoefte aaan een (pastoraal) gesprek met iemand uit de kerk",
         five: true,
         isBar: true,
+        last: true,
+        subject: "Jeugdcommissie en Jeugdwerk",
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
@@ -809,6 +838,7 @@ var dataList = {
     wwjz: {
         name: "wwjz",
         isBar: false,
+        last: false,
         title: "Ik weet wie in de huidige jeugdcommissie zitten",
         data: {
             labels: ["Ja", "Nee", "Ik weet het van één persoon", "Wat is de jeugdcommisie?"],
@@ -836,6 +866,7 @@ var dataList = {
         title: "Ik weet wat de huidige jeugdcommissie doet",
         five: true,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
@@ -864,6 +895,7 @@ var dataList = {
         title: "Ik ben blij met hoe het jeugdwerk in de kerk geregeld is (catechisatie, vereniging, jeugddiensten, acties, kamp, etc.)",
         five: false,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -904,6 +936,8 @@ var dataList = {
         title: "Ik heb duidelijke ideeën over hoe het jeugdwerk verbeterd kan worden",
         five: false,
         isBar: true,
+        last: true,
+        subject: "Jeugdraad",
         data: {
             labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [{
@@ -944,6 +978,7 @@ var dataList = {
         title: "Ik zie toekomst in een nieuwe jeugdraad, voor de jeugd, door de jeugd",
         five: true,
         isBar: true,
+        last: false,
         data: {
             labels: ["1", "2", "3", "4", "5"],
             datasets: [{
