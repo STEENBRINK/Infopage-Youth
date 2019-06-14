@@ -85,6 +85,14 @@ var options = {
         }
 
     },
+    round: {
+        options: {
+            title: {
+                display: true,
+            },
+            aspectRatio: 1
+        }
+    },
     bar: "bar",
     horizontalBar: "horizontalBar",
     doughnut: "doughnut"

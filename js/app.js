@@ -17,14 +17,15 @@ var button_register_number = 0
 var buttons = []
 
 //register buttons and eventlisteners
-registerBarCharts()
-registerPieCharts()
+var buttonSection = document.getElementById("buttonlist")
+makeElements()
+drawCharts()
 
 function drawChart(chartElement, config, chartName){
     drawn_charts[chartName] = new Chart(chartElement, config);
 }
 
-function deleteChart(chartElement, isDoughnut){
+function deleteChart(chartElement, isBar){
 
     let div = chartElement.parentNode
     let element
@@ -38,7 +39,7 @@ function deleteChart(chartElement, isDoughnut){
 
     let newElement = document.createElement('canvas')
     newElement.setAttribute("id", chartElement.id)
-    if(isDoughnut){
+    if(!isBar){
         newElement.setAttribute("class", "doughnut")
     }
     
@@ -59,64 +60,115 @@ function checkChart(e, chart, config, drawn, isDoughnut){
     }
 }
 
-function registerBarCharts() {
-    for (let chart_data in data.barCharts){
-    
-        buttons[button_register_number] = document.getElementById(data.barCharts[chart_data].name + "_button")
+function drawCharts() {
+    button_register_number = 0
+    for (let element in dataList){
+        
         
         let config
     
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            if(data.barCharts[chart_data].five) {
+            if(!dataList[element].isBar){
+                let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
+                clonedOptions.title.text = dataList[element].title
+
                 config = {
-                    data: data.barCharts[chart_data].data,
-                    type: options.horizontalBar,
-                    options: options.five.options
+                    data: dataList[element].data,
+                    type: options.doughnut,
+                    options: clonedOptions
                 }
-            }else{
+            }else if(dataList[element].five) {
+
+                let clonedOptions = JSON.parse(JSON.stringify(options.five.options))
+                clonedOptions.title.text = dataList[element].title
+
                 config = {
-                    data: data.barCharts[chart_data].data,
+                    data: dataList[element].data,
                     type: options.horizontalBar,
-                    options: options.ten.options
+                    options: clonedOptions
+                }
+
+            }else{
+
+                let clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+                clonedOptions.title.text = dataList[element].title
+
+                config = {
+                    data: dataList[element].data,
+                    type: options.horizontalBar,
+                    options: clonedOptions
                 }
             }
 
-            config.options.title.text = data.barCharts[chart_data].title
-
-            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, data.barCharts[chart_data].name + "_chart", config, data.barCharts[chart_data].name, false))
+            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, dataList[element].isBar))
         }else{  
-            if(data.barCharts[chart_data].five) {
+            if(!dataList[element].isBar){
+                let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
+                clonedOptions.title.text = dataList[element].title
+
                 config = {
-                    data: data.barCharts[chart_data].data,
-                    type: options.bar,
-                    options: options.five.options
+                    data: dataList[element].data,
+                    type: options.doughnut,
+                    options: clonedOptions
                 }
-            }else{
+            
+            }else if(dataList[element].five) {
+
+                let clonedOptions = JSON.parse(JSON.stringify(options.five.options))
+                clonedOptions.title.text = dataList[element].title
+
                 config = {
-                    data: data.barCharts[chart_data].data,
+                    data: dataList[element].data,
                     type: options.bar,
-                    options: options.ten.options
+                    options: clonedOptions
+                }
+
+            }else{
+
+                let clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+                clonedOptions.title.text = dataList[element].title
+
+                config = {
+                    data: dataList[element].data,
+                    type: options.bar,
+                    options: clonedOptions
                 }
             }
 
-            config.options.title.text = data.barCharts[chart_data].title
-            console.log(data.barCharts[chart_data].title)
+            config.options.title.text = dataList[element].title
 
-            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, data.barCharts[chart_data].name + "_chart", config, data.barCharts[chart_data].name, false))
+            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, false))
         }
 
         button_register_number++
-
     }
+
 }
 
-function registerPieCharts() {
-    for (let chart_data in data.pieCharts) {
+function makeElements() {
+    
+    for (let element in dataList){
+        let newButton= document.createElement('button')
+        newButton.setAttribute("class", "collapsible")
+        newButton.setAttribute("id", dataList[element].name + "_button")
+        newButton.innerHTML = dataList[element].title
 
-        buttons[button_register_number] = document.getElementById(data.pieCharts[chart_data].name + "_button")
+        let newDiv = document.createElement('div')
+        newDiv.setAttribute("class", "content")
+        newDiv.setAttribute("id", dataList[element].name + "_content")
 
-        buttons[button_register_number].addEventListener("click", (e) => checkChart(e, data.pieCharts[chart_data].name + "_chart", data.pieCharts[chart_data].config, data.pieCharts[chart_data].name, true))
+        let newCanvas = document.createElement('canvas')
+        newCanvas.setAttribute("id", dataList[element].name + "_chart")
+        if(!dataList[element].isBar){
+            newCanvas.setAttribute("class", "doughnut")
+        }
 
+        buttonSection.appendChild(newButton)
+        buttonSection.appendChild(newDiv)
+        newDiv.appendChild(newCanvas)
+
+        buttons[button_register_number] = newButton
+        button_register_number++
     }
 }
 
