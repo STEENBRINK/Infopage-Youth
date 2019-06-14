@@ -4,6 +4,7 @@
 //todo: css
 //todo: inhoud website
 //todo: last elements and titles
+//git
 
 
 //global vars
