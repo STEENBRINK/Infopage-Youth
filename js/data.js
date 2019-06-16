@@ -7,10 +7,10 @@ var dataList = {
         last: true,
         subject: "Betrokkenheid en geloofsopbouw in de gemeente",
         data: {
-            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
             datasets: [{
                 label: "Personen per leeftijd",
-                data: [0, 1, 0, 1, 2, 3, 7, 11, 3, 0],
+                data: [2, 3, 6, 3, 0, 3, 2, 4, 3, 0, 2],
                 backgroundColor: [
                     "rgba(54, 162, 235, 0.5)",
                     "rgba(54, 162, 235, 0.5)",
@@ -586,7 +586,7 @@ var dataList = {
     },
     wwoi: {
         name: "wwoi",
-        isBar: true,
+        isBar: false,
         last: false,
         title: "Ik weet wie mijn ouderling is",
         data: {
@@ -595,15 +595,11 @@ var dataList = {
                 label: "Ik weet wie mijn ouderling is",
                 backgroundColor: [
                     "rgba(0, 255, 0, 0.5)",
-                    "rgba(255, 125, 0, 0.5)",
                     "rgba(255, 0, 0, 0.5)",
-                    "rgba(255, 255, 0, 0.5)",
                 ],
                 borderColor: [
                     "rgba(0, 255, 0, 1)",
-                    "rgba(255, 125, 0, 1)",
                     "rgba(255, 0, 0, 1)",
-                    "rgba(255, 255, 0, 1)",
                 ],
                 borderWidth: 1,
                 data: [17, 11]

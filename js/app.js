@@ -1,9 +1,9 @@
 'use strict';
 
-//todo: fontsize
-//todo: css
-//todo: inhoud website
-//todo: last elements and titles
+//todo: css (what where)
+//todo: inhoud website -> general explenation, important statistics
+//todo: download button
+
 
 
 //global vars
@@ -70,6 +70,7 @@ function drawCharts() {
                 let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
                 clonedOptions.title.text = dataList[element].title
 
+
                 config = {
                     data: dataList[element].data,
                     type: options.doughnut,
@@ -79,42 +80,11 @@ function drawCharts() {
 
                 let clonedOptions = JSON.parse(JSON.stringify(options.five.options))
                 clonedOptions.title.text = dataList[element].title
-
-                config = {
-                    data: dataList[element].data,
-                    type: options.horizontalBar,
-                    options: clonedOptions
-                }
-
-            }else{
-
-                let clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
-                clonedOptions.title.text = dataList[element].title
-
-                config = {
-                    data: dataList[element].data,
-                    type: options.horizontalBar,
-                    options: clonedOptions
-                }
-            }
-
-            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, dataList[element].isBar))
-        }else{  
-
-            if(!dataList[element].isBar){
-                let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
-                clonedOptions.title.text = dataList[element].title
-
-                config = {
-                    data: dataList[element].data,
-                    type: options.doughnut,
-                    options: clonedOptions
-                }
-            
-            }else if(dataList[element].five) {
-
-                let clonedOptions = JSON.parse(JSON.stringify(options.five.options))
-                clonedOptions.title.text = dataList[element].title
+                clonedOptions.scales.yAxes[0].ticks.fontSize = 10;
+                clonedOptions.scales.xAxes[0].ticks.fontSize = 10;
+                clonedOptions.scales.yAxes[0].scaleLabel.fontSize = 10
+                clonedOptions.scales.xAxes[0].scaleLabel.fontSize = 10
+                clonedOptions.tooltips.display = false
 
                 config = {
                     data: dataList[element].data,
@@ -130,6 +100,55 @@ function drawCharts() {
                     clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
                 }
                 clonedOptions.title.text = dataList[element].title
+                clonedOptions.scales.yAxes[0].ticks.fontSize = 10;
+                clonedOptions.scales.xAxes[0].ticks.fontSize = 10;
+                clonedOptions.scales.yAxes[0].scaleLabel.fontSize = 10
+                clonedOptions.scales.xAxes[0].scaleLabel.fontSize = 10
+                clonedOptions.tooltips.display = false
+
+                config = {
+                    data: dataList[element].data,
+                    type: options.bar,
+                    options: clonedOptions
+                }
+            }
+
+            buttons[button_register_number].addEventListener("click", (e) => checkChart(e, dataList[element].name + "_chart", config, dataList[element].name, dataList[element].isBar))
+        }else{  
+            if(!dataList[element].isBar){
+                let clonedOptions = JSON.parse(JSON.stringify(options.round.options))
+                clonedOptions.title.text = dataList[element].title
+                
+                config = {
+                    data: dataList[element].data,
+                    type: options.doughnut,
+                    options: clonedOptions
+                }
+            
+            }else if(dataList[element].five) {
+
+                let clonedOptions = JSON.parse(JSON.stringify(options.five.options))
+                clonedOptions.title.text = dataList[element].title
+
+
+                console.log(clonedOptions)
+
+                config = {
+                    data: dataList[element].data,
+                    type: options.bar,
+                    options: clonedOptions
+                }
+
+            }else{
+                let clonedOptions
+                if(dataList[element].name == "leeftijden"){
+                    clonedOptions = JSON.parse(JSON.stringify(options.leeftijden.options))
+                }else{
+                    clonedOptions = JSON.parse(JSON.stringify(options.ten.options))
+                }
+                clonedOptions.title.text = dataList[element].title
+
+                console.log(clonedOptions)
 
                 config = {
                     data: dataList[element].data,
